@@ -1,10 +1,10 @@
-from app.message_bus import MessageBus
-from app.unit_of_work import UnitOfWork
-from domain.commands import CreateProductCommand
+from app import unit_of_work, message_bus
+from domain import commands
 
-uow = UnitOfWork()
-message_bus = MessageBus()
-command = CreateProductCommand(name="SmartPhone", price=100.00, category="Electronics")
+def test_product_created():
+    uow = unit_of_work.UnitOfWork()
+    mb = message_bus.MessageBus()
+    command = commands.CreateProductCommand(name="SmartPhone", price=100.00, category="Electronics")
 
-message_bus.handle(command, uow)
+    mb.handle(command, uow)
 

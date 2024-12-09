@@ -1,10 +1,11 @@
 from abc import ABC
+from dataclasses import dataclass
 
 class Command(ABC):
     pass
 
+@dataclass
 class CreateProductCommand(Command):
-    def __init__(self, name: str, price: float, category: str):
-        self.name = name
-        self.price = price
-        self.category = category
+    name: str
+    price: float
+    category: str

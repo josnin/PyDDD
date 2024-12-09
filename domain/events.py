@@ -1,12 +1,13 @@
 from abc import ABC
+from dataclasses import dataclass
 
 class DomainEvent(ABC):
     pass
 
+@dataclass
 class ProductCreated(DomainEvent):
-    def __init__(self, product_id, name, price, category):
-        self.product_id = product_id
-        self.name = name
-        self.price = price
-        self.category = category
+    product_id: str
+    name: str
+    price: float
+    category: str
 
