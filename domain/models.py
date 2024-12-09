@@ -57,7 +57,7 @@ class Product:
 
     def activate(self) -> None:
         if not self.status == enums.ProductStatus.PENDING_REVIEW:
-            raise ValueError("Approval is only allowed in Pending review")
+            raise ValueError("Product must be in {enums.ProductStatus.PENDING_REVIEW}")
         self.change_status(enums.ProductStatus.APPROVED)
 
     def deactivate(self) -> None:
