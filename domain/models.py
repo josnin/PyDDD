@@ -16,7 +16,7 @@ class VariantItem:
     id: uuid.uuid4
     option: str
     value: str
-    price: float
+    price: Money
     stock: int
 
 @dataclass
@@ -28,7 +28,7 @@ class ProductVariant:
 
 
 @dataclass
-class Product:
+class ProductCatalog:
     id: uuid.uuid4
     name: str
     description: str
